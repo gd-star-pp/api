@@ -66,7 +66,7 @@ CREATE TABLE `accounts` (
   `completed_levels` int(11) NOT NULL DEFAULT '0',
   `spider` int(11) NOT NULL DEFAULT '0',
   `explosion` int(11) NOT NULL DEFAULT '0',
-  `banned` int(11) NOT NULL DEFAULT '0',
+  `banned` int(11) NOT NULL DEFAULT '0'
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
