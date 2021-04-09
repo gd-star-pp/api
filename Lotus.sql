@@ -329,7 +329,7 @@ ALTER TABLE `levels`
 --
 ALTER TABLE `levelscores`
   MODIFY `score_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
-==
+
 -- AUTO_INCREMENT for table `privilegegroups`
 --
 ALTER TABLE `privilegegroups`
