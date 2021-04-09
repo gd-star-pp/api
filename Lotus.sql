@@ -44,7 +44,6 @@ CREATE TABLE `accounts` (
   `is_bot` int(1) NOT NULL DEFAULT '0', -- FIX THIS
   `stars` int(11) NOT NULL DEFAULT '0',
   `demons` int(11) NOT NULL DEFAULT '0',
-  `icon` int(11) NOT NULL DEFAULT '0',
   `color1` int(11) NOT NULL DEFAULT '0',
   `color2` int(11) NOT NULL DEFAULT '3',
   `icon_type` int(11) NOT NULL DEFAULT '0',
