@@ -42,7 +42,6 @@ CREATE TABLE `accounts` (
   `register_date` int(11) NOT NULL DEFAULT '0',
   `privileges` int(6) NOT NULL DEFAULT '126',
   `is_bot` int(1) NOT NULL DEFAULT '0', -- FIX THIS
-  `user_id` int(11) NOT NULL,
   `stars` int(11) NOT NULL DEFAULT '0',
   `demons` int(11) NOT NULL DEFAULT '0',
   `icon` int(11) NOT NULL DEFAULT '0',
