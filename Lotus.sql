@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 09, 2021 at 11:08 PM
+-- Generation Time: Apr 10, 2021 at 02:26 PM
 -- Server version: 5.7.28-0ubuntu0.18.04.4
 -- PHP Version: 7.1.33-9+ubuntu18.04.1+deb.sury.org+1
 
@@ -55,24 +55,26 @@ CREATE TABLE `badge_assign` (
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
+  `safe_name` varchar(32) NOT NULL,
   `email` varchar(64) NOT NULL,
   `password` varchar(128) NOT NULL,
   `register_ts` varchar(9) NOT NULL DEFAULT '0',
   `last_active_ts` varchar(9) NOT NULL DEFAULT '0',
   `privileges` bigint(20) NOT NULL DEFAULT '0',
   `country` varchar(2) NOT NULL DEFAULT 'XX',
-  `pp` float UNSIGNED NOT NULL,
-  `stars` int(11) UNSIGNED NOT NULL,
-  `coins` smallint(4) UNSIGNED NOT NULL,
-  `u_coins` int(11) UNSIGNED NOT NULL,
-  `demons` int(11) UNSIGNED NOT NULL,
-  `display_icon` tinyint(1) UNSIGNED NOT NULL,
-  `icon` tinyint(3) UNSIGNED NOT NULL,
-  `ship` int(10) UNSIGNED NOT NULL,
-  `ufo` int(10) UNSIGNED NOT NULL,
-  `ball` int(10) UNSIGNED NOT NULL,
-  `robot` int(10) UNSIGNED NOT NULL,
-  `spider` int(10) UNSIGNED NOT NULL
+  `pp` float UNSIGNED NOT NULL DEFAULT '0',
+  `stars` int(11) UNSIGNED NOT NULL DEFAULT '0',
+  `coins` smallint(4) UNSIGNED NOT NULL DEFAULT '0',
+  `u_coins` int(11) UNSIGNED NOT NULL DEFAULT '0',
+  `demons` int(11) UNSIGNED NOT NULL DEFAULT '0',
+  `display_icon` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `icon` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `ship` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `ufo` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `ball` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `robot` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `spider` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `attempts` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
