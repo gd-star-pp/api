@@ -49,6 +49,19 @@ CREATE TABLE `badge_assign` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `privilege_groups`
+--
+
+CREATE TABLE `privilege_groups` (
+  `id` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `description` varchar(32) NOT NULL,
+  `privileges` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -80,6 +93,12 @@ CREATE TABLE `users` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `privilege_groups`
+--
+ALTER TABLE `privilege_groups`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `badge_assign`
