@@ -77,6 +77,32 @@ CREATE TABLE `users` (
   `attempts` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `levels`
+--
+
+CREATE TABLE `levels` (
+  `id` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `description` varchar(128) NOT NULL,
+  `version` int(11) NOT NULL,
+  `downloads` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `score` int(11) NOT NULL,
+  `creator` varchar(32) NOT NULL,
+  `song_id` int(11) NOT NULL,
+  `difficulty` int(11) NOT NULL,
+  `demon_difficulty` int(11) NOT NULL,
+  `password` int(11) NOT NULL DEFAULT '0',
+  `rob_stars` int(11) NOT NULL,
+  `coins` int(11) NOT NULL DEFAULT '0',
+  `uploaded_timestamp` int(11) NOT NULL,
+  `length` int(11) NOT NULL,
+  `objects` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -91,6 +117,12 @@ ALTER TABLE `badge_assign`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `levels`
+--
+ALTER TABLE `levels`
   ADD PRIMARY KEY (`id`);
 
 --
