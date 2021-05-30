@@ -98,7 +98,7 @@ CREATE TABLE `referrals` (
 CREATE TABLE `levels` (
   `id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
-  `description` varchar(128) NOT NULL,
+  `description` varchar(256) NOT NULL,
   `version` int(11) NOT NULL,
   `downloads` int(11) NOT NULL,
   `rating` int(11) NOT NULL,
