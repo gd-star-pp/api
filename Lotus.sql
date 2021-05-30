@@ -110,7 +110,7 @@ CREATE TABLE `levels` (
   `password` int(11) NOT NULL DEFAULT '0',
   `rob_stars` int(11) NOT NULL,
   `coins` int(11) NOT NULL DEFAULT '0',
-  `uploaded_timestamp` int(11) NOT NULL,
+  `uploaded_timestamp` varchar(50) NOT NULL,
   `length` int(11) NOT NULL,
   `objects` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
