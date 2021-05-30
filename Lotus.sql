@@ -75,7 +75,7 @@ CREATE TABLE `users` (
   `robot` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `spider` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `attempts` int(11) NOT NULL DEFAULT '0',
-  `ip` varchar(15) NOT NULL DEFAULT '0.0.0.0'
+  `ip` varchar(40) NOT NULL DEFAULT '0.0.0.0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
