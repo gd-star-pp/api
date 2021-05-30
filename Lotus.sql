@@ -81,6 +81,17 @@ CREATE TABLE `users` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `referrals`
+--
+
+CREATE TABLE `referrals` (
+  `id` int(11) NOT NULL,
+  `referer_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `levels`
 --
 
@@ -118,6 +129,12 @@ ALTER TABLE `badge_assign`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `referrals`
+--
+ALTER TABLE `referrals`
   ADD PRIMARY KEY (`id`);
 
 --
