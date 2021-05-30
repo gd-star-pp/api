@@ -86,7 +86,7 @@ CREATE TABLE `users` (
 
 CREATE TABLE `referrals` (
   `id` int(11) NOT NULL,
-  `referer_id` int(11) NOT NULL
+  `referrer_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
