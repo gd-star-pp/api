@@ -1,9 +1,9 @@
 import aiohttp
 import importlib
 
-routes = {"/submit": "submit",
-          "/database_level": "database_level",
-          "/login": "login"}
+routes = {"/api/submit": "submit",
+          "/api/database_level": "database_level",
+          "/api/login": "login"}
 
 def add_all_routes(app: aiohttp.web.Application):
     for route, modulename in routes.items():
