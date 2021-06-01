@@ -81,6 +81,24 @@ CREATE TABLE `users` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `scores`
+--
+
+CREATE TABLE `scores` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `level_id` int(11) NOT NULL,
+  `pp` float UNSIGNED NOT NULL DEFAULT '0',
+  `percent` int(11) NOT NULL,
+  `time` int(30) NOT NULL,
+  `jumps` int(11) NOT NULL,
+  `attempts` int(11) NOT NULL,
+  `coins` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `referrals`
 --
 
@@ -129,6 +147,12 @@ ALTER TABLE `badge_assign`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `scores`
+--
+ALTER TABLE `scores`
   ADD PRIMARY KEY (`id`);
 
 --
