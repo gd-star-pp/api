@@ -3,7 +3,8 @@ import importlib
 
 routes = {"/api/submit": "submit_post",
           "/api/database_level": "database_level",
-          "/api/authorise": "authorise_post"}
+          "/api/authorise": "authorise_post",
+          "/api/logout": "logout_post"}
 
 def add_all_routes(app: aiohttp.web.Application):
     for route, modulename in routes.items():
