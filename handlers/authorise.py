@@ -1,7 +1,7 @@
 import aiohttp
 from common.helpers import userhelper # type: ignore
 
-async def login(r: aiohttp.web.RequestHandler):
+async def authorise(r: aiohttp.web.RequestHandler):
     args = r.rel_url.query
     username = args.get("username")
     password = args.get("password")
