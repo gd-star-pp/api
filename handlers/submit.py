@@ -6,7 +6,7 @@ async def submit_post(r: aiohttp.web.RequestHandler):
     if not token in tokens:
         return aiohttp.web.HTTPBadRequest()
     
-    data = await r.post()
+    data = await r.json()
     
     percent = data.get("percent")
     replay = data.get("replay")

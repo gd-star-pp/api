@@ -4,9 +4,8 @@ from common.helpers import userhelper, geohelper # type: ignore
 import secrets
 from glob import tokens
 
-async def authorise_post(r: aiohttp.web.RequestHandler):  
-    data = await r.post()
-    
+async def authorise_post(r: aiohttp.web.RequestHandler):
+    data = await r.json()
     username = data.get("username")
     password = data.get("password")
     
