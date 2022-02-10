@@ -1,6 +1,5 @@
 import aiohttp
 from common.helpers import userhelper # type: ignore
-from aiohttp_session import get_session
 from glob import tokens
 
 async def logout_post(r: aiohttp.web.RequestHandler):

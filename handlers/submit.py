@@ -1,5 +1,4 @@
 import aiohttp
-from aiohttp_session import get_session
 from glob import tokens
 
 async def submit_post(r: aiohttp.web.RequestHandler):
