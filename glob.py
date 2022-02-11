@@ -1,7 +1,5 @@
 
 
-from this import d
-
 
 tokens = {}
 
