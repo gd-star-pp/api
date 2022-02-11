@@ -1,5 +1,8 @@
 
 
+from this import d
+
+
 tokens = {}
 
 def authorise_token(request):
@@ -7,3 +10,9 @@ def authorise_token(request):
     if not token in tokens:
         return False
     return True
+
+def get_token(request):
+    token = request.headers.get("X-Authentication-Token")
+    if not token in tokens:
+        raise aiohttp.web.HTTPUnauthorized(reason="Token is incorrect")
+    return token
