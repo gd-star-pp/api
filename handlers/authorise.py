@@ -2,15 +2,22 @@ import aiohttp
 from common.helpers import userhelper # type: ignore
 from common.helpers import userhelper, geohelper # type: ignore
 import secrets
-from glob import tokens
+import json
+from glob import tokens, authorise_token
 
 async def authorise_post(r: aiohttp.web.RequestHandler):
-    data = await r.json()
+    try:
+        data = await r.json()
+    except json.decoder.JSONDecodeError:
+        return aiohttp.web.HTTPBadRequest(reason="JSON body is not valid")
+        
     username = data.get("username")
     password = data.get("password")
     
-    if r.headers.get("X-Authentication-Token"):
-        aiohttp.web.HTTPOk()
+    if authorise_token(r):
+        return aiohttp.web.HTTPOk(reason="Authorized")
+    else:
+        return aiohttp.web.HTTPUnauthorized(reason="Unauthorized")
     
     user = await userhelper.get_user_by_name(username)
     if user.compare_pass(password):
@@ -23,5 +30,5 @@ async def authorise_post(r: aiohttp.web.RequestHandler):
         
         tokens[token] = user
         
-        return aiohttp.web.HTTPOk(headers={"X-Authentication-Token": token})
-    return aiohttp.web.HTTPBadRequest()
+        return aiohttp.web.HTTPOk(headers={"X-Authentication-Token": token}, reason="Authorization token created")
+    return aiohttp.web.HTTPBadRequest("Invalid username or password")

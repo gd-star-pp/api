@@ -8,6 +8,6 @@ async def logout_post(r: aiohttp.web.RequestHandler):
     
     if token:
         tokens.pop(token)
-        return aiohttp.web.HTTPOk()
+        return aiohttp.web.HTTPOk("Logged out")
     
-    return aiohttp.web.HTTPBadRequest()
+    return aiohttp.web.HTTPBadRequest("No token provided")

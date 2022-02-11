@@ -1,10 +1,9 @@
 import aiohttp
-from glob import tokens
+from glob import tokens, authorise_token
 
 async def submit_post(r: aiohttp.web.RequestHandler):
-    token = r.headers.get("X-Authentication-Token")
-    if not token in tokens:
-        return aiohttp.web.HTTPBadRequest()
+    if not authorise_token(r):
+        return aiohttp.web.HTTPUnauthorized()
     
     data = await r.json()
     
