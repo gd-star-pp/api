@@ -20,7 +20,7 @@ async def authorise_post(r: aiohttp.web.RequestHandler):
         return aiohttp.web.HTTPUnauthorized(reason="Unauthorized")
     
     user = await userhelper.get_user_by_name(username)
-    if user.compare_pass(password):
+    if user and user.compare_pass(password):
         await user.update_last_active()
         user.ip = r.headers.get("CF-Connecting-IP", "0.0.0.0")
         user.country = await geohelper.get_country(user.ip)
