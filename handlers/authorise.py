@@ -16,6 +16,8 @@ async def authorise_post(r: aiohttp.web.RequestHandler):
     
     if authorise_token(r):
         return aiohttp.web.HTTPOk(reason="Authorized")
+    elif not r.headers.get("X-Authentication-Token"):
+        pass
     else:
         return aiohttp.web.HTTPUnauthorized(reason="Unauthorized")
     
@@ -31,4 +33,4 @@ async def authorise_post(r: aiohttp.web.RequestHandler):
         tokens[token] = user
         
         return aiohttp.web.HTTPOk(headers={"X-Authentication-Token": token}, reason="Authorization token created")
-    return aiohttp.web.HTTPBadRequest("Invalid username or password")
+    return aiohttp.web.HTTPBadRequest(reason="Invalid username or password")
